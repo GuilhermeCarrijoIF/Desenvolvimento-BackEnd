@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão Pessoas 2026</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: #263238;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 30px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+        }
+
+        h1, h2 {
+            margin-top: 0;
+        }
+
+        .endpoint {
+            background-color: #f1f1f1;
+            border-left: 5px solid #263238;
+            padding: 12px;
+            margin-bottom: 12px;
+            border-radius: 5px;
+        }
+
+        .method {
+            font-weight: bold;
+            color: #1565c0;
+        }
+
+        a {
+            color: #1565c0;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        code {
+            background-color: #e0e0e0;
+            padding: 3px 6px;
+            border-radius: 4px;
+        }
+
+        footer {
+            text-align: center;
+            margin: 30px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Gestão Pessoas 2026</h1>
+    <p>API REST desenvolvida com Spring Boot</p>
+</header>
+
+<main>
+    <h2>Sobre o projeto</h2>
+    <p>
+        Esta aplicação simula o cadastro, consulta, atualização e remoção de pessoas,
+        utilizando uma arquitetura em camadas com Controller, Service, Model e tratamento
+        centralizado de exceções.
+    </p>
+
+    <h2>Endpoints principais</h2>
+
+    <div class="endpoint">
+        <span class="method">GET</span>
+        <a href="/pessoas">/pessoas</a>
+        <p>Retorna a lista de pessoas cadastradas.</p>
+    </div>
+
+    <div class="endpoint">
+        <span class="method">GET</span>
+        <a href="/pessoas/1">/pessoas/1</a>
+        <p>Busca uma pessoa pelo ID informado.</p>
+    </div>
+
+    <div class="endpoint">
+        <span class="method">POST</span>
+        <code>/pessoas</code>
+        <p>Cria uma nova pessoa a partir de um JSON enviado no corpo da requisição.</p>
+    </div>
+
+    <div class="endpoint">
+        <span class="method">PUT</span>
+        <code>/pessoas</code>
+        <p>Atualiza os dados de uma pessoa existente usando JSON no corpo da requisição.</p>
+    </div>
+
+    <div class="endpoint">
+        <span class="method">DELETE</span>
+        <code>/pessoas/{id}</code>
+        <p>Remove uma pessoa pelo ID informado.</p>
+    </div>
+
+    <h2>Testes de exceções</h2>
+
+    <div class="endpoint">
+        <span class="method">GET</span>
+        <a href="/teste/int/0">/teste/int/0</a>
+        <p>Simula uma exceção genérica, retornando erro interno do servidor.</p>
+    </div>
+
+    <div class="endpoint">
+        <span class="method">GET</span>
+        <a href="/teste/bad/-1">/teste/bad/-1</a>
+        <p>Simula uma requisição inválida, retornando Bad Request.</p>
+    </div>
+
+    <div class="endpoint">
+        <span class="method">GET</span>
+        <a href="/teste/nao/401">/teste/nao/401</a>
+        <p>Simula acesso não autorizado, retornando Unauthorized.</p>
+    </div>
+
+    <h2>Exemplo de JSON para POST</h2>
+
+    <pre><code>{
+  "nome": "Guilherme",
+  "sobrenome": "Carrijo",
+  "endereco": "Morrinhos - GO",
+  "genero": "Masculino"
+}</code></pre>
+
+    <h2>Exemplo de JSON para PUT</h2>
+
+    <pre><code>{
+  "id": 1,
+  "nome": "Guilherme",
+  "sobrenome": "dos Reis",
+  "endereco": "Morrinhos - GO",
+  "genero": "Masculino"
+}</code></pre>
+</main>
+
+<footer>
+    <p>Projeto GestaoPessoas2026 - Spring Boot</p>
+</footer>
+
+</body>
+</html>
